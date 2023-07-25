@@ -8,13 +8,13 @@ Trail of Bits finished their initial audit of the iOS version of the Save app in
 
 OpenArchive’s team addressed and solved most of the issues identified by Trail of Bits, partially resolved one minor issue which depends on the DropBox API (ID 2) and did not resolve one minor issue (ID 5).
 
-The one unresolved issue (ID 5) involves disguising the app icon when Save is moved to the background. We are currently planning to implement different options to hide the use of Save in the future. For example, some apps call this function a discrete or disguised app setting and allow the user to change the main app icon and its screen while in the background to a calculator, a to-do list, or something else.  
+The one unresolved issue (ID 5) involves disguising the app view when Save is moved to the background. We are currently planning to implement different options to hide the use of Save in the future. For example, some apps call this function a discrete or disguised app setting and allow the user to change the main app icon and its screen while in the background to a calculator, a to-do list, or something else.  
 
 # Save Android
 
 Trail of Bits finished their initial audit of the Android version of the Save app this Spring 2023 and then reviewed the fixes and mitigations implemented by the OpenArchive team to resolve the issues identified in their initial audit report. We have addressed and solved most of the issues identified by Trail of Bits.
-There are some issues that are either partially resolved or not resolved yet. These issues either do not represent a threat to Save users, are not directly exploitable, or are dependent on third-party libraries that we use.
-OpenArchive’s team addressed and solved most of the issues identified by Trail of Bits. There are some issues that are either partially resolved or not resolved yet. These issues either do not represent a threat to Save users, are not directly exploitable, or are dependent on third-party libraries that we use.
+There are some issues that are either partially resolved or not resolved yet. These issues either do not represent a threat to Save users, are difficult to exploit, or are dependent on third-party libraries that we use.
+OpenArchive’s team addressed and solved most of the issues identified by Trail of Bits. There are some issues that are either partially resolved or not resolved yet. These issues either do not represent a threat to Save users, have a high exploitation difficulty and would require precise information about the targeted device, or are dependent on third-party libraries that we use.
 
 (ID 2) Save uses a deprecated LocalBroadcastManager class, which wasn’t updated because  there's nothing about the use of this class that's exploitable or that would disrupt the app's functionality. We will consider updating this in the future while improving the overall code quality of the app.
 
