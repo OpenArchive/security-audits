@@ -21,7 +21,14 @@ OpenArchive’s team addressed and solved most of the issues identified by Trail
 (ID 13) Save had a path traversal vulnerability. This was fixed, but we still allow the content uri to use the format ”content://” instead of just “file://”.​​ We did this so that our users could upload their chosen files to their backend and don’t want to restrict app functionality or sharing between other apps and Save.
 
 Save use libproofmode to digitally sign media files (ID 4, 19). We were originally using a static password to encrypt the private key used by libproofmode. We are now encrypting the PGP private key used by libproofmode with the user's password. We are aware this solution is not optimal, but at the same time it provides, what we believe, was the right balance between usability and data security.
-Libproofmode has also only recently started using a different key management system (ID 19). Save still implements only PGP at the moment, and we are currently evaluating how we can improve this in the future. 
+Save doesn't currently allow users to import private keys. While some users might find this feature useful, We don’t feel that solution is generally safe for our users for the following reasons:
+
+- The phone could be confiscated: if they are storing a key that they use for other highly-sensitive communication, this could compromise their safety.
+
+- People that try to follow good gpg/pgp hygiene do not keep their private key online and follow a strict procedure to generate and store keys.
+
+- Importing could be a usability nightmare as keys are quite big nowadays and copying and pasting a big lump of text could lead to errors and frustration.
+
 
 Save does not warn users about using EXIF data in media files (ID 15). We believe EXIF data is crucial to authenticate evidentiary media and that users are aware that this is part of the app functionality through our guides and trainings. We will also include the risks of EXIF data attached to media files in our documentation. 
 
